@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var del = require('del');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
@@ -14,6 +15,7 @@ gulp.task('clear', function () {
   return del.sync('dist');
 });
 
+// COPY CHICO ASSETS
 gulp.task('copy', function() {
   return gulp.src(['bower_components/chico/dist/assets/**/*'])
     .pipe(gulp.dest('dist/assets'))
@@ -23,6 +25,10 @@ gulp.task('copy', function() {
 gulp.task('sass', function () {
   return gulp.src('./src/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('dist/css'))
     .pipe(cleanCSS({
       compatibility: 'ie8',
@@ -51,16 +57,18 @@ gulp.task('js', function() {
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('watch', function () {
-  gulp.watch('./src/sass/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['js']);
-});
-
 // MINIFY HTML
 gulp.task('minifyHTML', function() {
   return gulp.src('src/index.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'));
+});
+
+// WATCH FILES
+gulp.task('watch', function () {
+  gulp.watch('./src/sass/**/*.scss', ['sass']);
+  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/**/*.html', ['minifyHTML']);
 });
 
 // WEBSERVER
@@ -71,9 +79,13 @@ gulp.task('webserver', function() {
   }));
 });
 
+// TASK DEV
 gulp.task('dev', function (done) {
   runSequence('clear', ['copy', 'sass', 'js', 'minifyHTML', 'watch'], 'webserver', done);
 });
 
-// Default task: run the dev
+// TASK BUILD
+gulp.task('build', ['dev']);
+
+// DEFAULT TASK: RUN THE DEV
 gulp.task('default', ['dev']);
