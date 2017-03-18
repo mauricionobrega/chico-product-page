@@ -16,47 +16,54 @@
 
   <main>
     <article itemscope itemtype="http://schema.org/Product">
+
       <h1 itemprop="name">Ipad Mini Apple 16 Gb Wifi Led 7.9</h1>
       <a class="image" href="#" title="Imagem do produto" itemprop="url">
-        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Imagem%201&w=500&h=500" alt="Imagem do produto de frente" width="#" height="#" itemprop="image" />
+        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Imagem%201&w=256&h=271" alt="Imagem do produto de frente" width="#" height="#" itemprop="image" />
       </a>
       <section class="offer" itemscope itemtype="http://schema.org/Offer">
         <link itemprop="availability" href="http://schema.org/InStock" />
         <span class="price" itemprop="price" content="4799.99">$ 4799.99</span>
-        <label>
-          Quantity
-          <select>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-          </select>
-        </label>
-        <label>
-          Payments
-          <select>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-          </select>
-        </label>
-        <button>Buy</button>
+
+        <form method="get" action="#" class="ch-form">
+          <div class="ch-form-row">
+            <label for="quantity">Quantity</label>
+            <select id="quantity" name="quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="ch-form-row">
+            <label for="payments">Payments</label>
+            <select id="payments" name="payments">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <p class="ch-form-actions">
+            <button type="submit" class="ch-btn ch-btn-large">Buy</button>
+          </p>
+        </form>
         <span>MercadoLibre isn't the owner of this product</span>
+
+        <h4>More products like this</h4>
         <div class="ch-carousel">
-          <h3>More products like this</h3>
           <ul>
             <li><img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=01&w=50&h=50"></li>
             <li><img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=02&w=50&h=50"></li>
@@ -71,6 +78,27 @@
           </ul>
         </div>
       </section>
+
+      <section class="tabs">
+        <ul role="tablist">
+          <li>
+            <input type="radio" name="tabs" id="tab1" checked />
+            <label for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0">Product Description</label>
+            <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+              <p itemprop="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+          </li>
+
+          <li>
+            <input type="radio" name="tabs" id="tab2" />
+            <label for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="0">Specification</label>
+            <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+              <p>Content for Tab #2</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
     </article>
   </main>
 

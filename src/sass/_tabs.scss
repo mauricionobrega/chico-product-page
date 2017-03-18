@@ -1,0 +1,70 @@
+$tabs-base-color: #EFEFEF;
+.tabs {
+  display: table;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: solid 1px $tabs-base-color;
+
+  &, * {
+    box-sizing: border-box;
+  }
+
+  ul {
+    position: relative;
+    margin: 0;
+    list-style: none;
+    text-align: left;
+  }
+
+  li {
+    display: inline-block;
+    margin-left: 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    top: 4px;
+    padding: 5px 10px;
+    border-radius: 2px 2px 0 0;
+    background: $tabs-base-color;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background: darken($tabs-base-color, 10);
+    }
+  }
+
+  .tab-content {
+    position: absolute;
+    display: none;
+    width: 100%;
+    padding: 25px;
+    z-index: 2;
+    overflow: hidden;
+    left: 0;
+    background: darken($tabs-base-color, 15);
+  }
+
+  // THE MAGIC
+  [id^="tab"]:checked + label {
+    top: 0;
+    background: darken($tabs-base-color, 15);
+  }
+
+  [id^="tab"]:checked ~ [id^="tab-content"] {
+    display: block;
+  }
+}
