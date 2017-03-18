@@ -1,0 +1,11 @@
+{
+  "name": "chico-product-page",
+  "description": "Front-End Test - Mercado Livre",
+  "version": "1.0.0",
+  "homepage": "",
+  "author": "Maurício Silva Teixeira de Nóbrega",
+  "license": "ISC",
+  "dependencies": {
+    "chico": "^2.0.10"
+  }
+}

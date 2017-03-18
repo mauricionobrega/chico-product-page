@@ -1,0 +1,48 @@
+// CHICO SASS
+@import "../../bower_components/chico/src/shared/styles/reset",
+        "../../bower_components/chico/src/shared/styles/variables",
+        "../../bower_components/chico/src/shared/styles/typography",
+        "../../bower_components/chico/src/shared/styles/icons",
+        "../../bower_components/chico/src/ui/styles/carousel";
+
+// PRODUCT PAGE SASS
+@import "carrousel", "offer";
+
+body, main, article {
+  background: #FFF;
+}
+
+main, article {
+  display: table;
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+article {
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+}
+
+.image, .offer {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.image {
+  img {
+    float: left;
+  }
+}

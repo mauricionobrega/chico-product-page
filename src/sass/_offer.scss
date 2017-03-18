@@ -1,0 +1,15 @@
+.offer {
+  vertical-align: top;
+  text-align: left;
+  max-width: 450px;
+  min-width: 390px;
+  padding-left: 50px;
+}
+
+@media screen and (max-width: 1020px) {
+  .offer {
+    width: 100%;
+    min-width: 500px;
+    padding-left: 0;
+  }
+}
