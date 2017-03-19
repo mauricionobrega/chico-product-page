@@ -32,16 +32,17 @@
     margin: 6px 0 0 0;
   }
 
-  .ch-btn {
-    padding: 8px 18px;
-  }
-
   .price {
     line-height: normal;
     font-size: 2.8em;
     font-weight: bold;
     color: $price-color;
   }
+
+  .ch-btn {
+    padding: 8px 18px;
+  }
+
 }
 
 @media screen and (max-width: 610px) {
