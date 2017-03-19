@@ -1,4 +1,7 @@
-.tabs {
+@import "../../bower_components/chico/src/shared/styles/boxes",
+  "../../bower_components/chico/src/ui/styles/tabs";
+
+.ch-tabs {
   display: table;
   width: 100%;
   margin-top: 10px;
@@ -9,19 +12,16 @@
     box-sizing: border-box;
   }
 
-  ul {
+  ul.ch-tabs-triggers {
     position: relative;
     margin: 0;
+    overflow: visible;
     list-style: none;
     text-align: left;
-  }
 
-  li {
-    display: inline-block;
-    margin: 0;
-
-    &:first-child {
-      margin-left: 0;
+    li {
+      display: inline-block;
+      margin: 0 5px 0 0;
     }
   }
 
@@ -33,54 +33,26 @@
 
   label {
     position: relative;
-    display: block;
-    top: 4px;
-    padding: 5px 40px 5px 10px;
-    border-radius: 2px 2px 0 0;
-    background: $tabs-base-color;
+    display: inline-block;
     cursor: pointer;
-
-    &:after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 0;
-      height: 0;
-      line-height: 0;
-      border-style: solid;
-      content: " ";
-      border-width: 0 20px 30px 0;
-      border-color: $background $background $tabs-base-color $background;
-    }
-
-    &:hover {
-      background: darken($tabs-base-color, 10);
-
-      &:after {
-        border-color: $background $background darken($tabs-base-color, 10) $background;
-      }
-    }
+    z-index: 3;
   }
 
-  .tab-content {
+  .ch-tabs-panel {
+    @extend .ch-box-lite;
     position: absolute;
     display: none;
     width: 100%;
-    padding: 25px;
+    margin-top: -1px;
     z-index: 2;
     overflow: hidden;
     left: 0;
-    background: $tabs-base-color;
+    cursor: initial;
   }
 
   // THE MAGIC
   [id^="tab"]:checked + label {
-    top: 0;
-    background: $tabs-base-color;
-
-    &:after {
-      border-color: $background $background $tabs-base-color $background;
-    }
+    @extend .ch-expandable-trigger-on;
   }
 
   [id^="tab"]:checked ~ [id^="tab-content"] {
