@@ -5,13 +5,14 @@
   "../../bower_components/chico/src/shared/styles/icons";
 
 // PRODUCT PAGE SASS
-@import "carrousel",
+@import "variables",
+  "carrousel",
   "product-image",
   "offer",
   "tabs";
 
 body, main, article {
-  background: #FFF;
+  background: $background;
 }
 
 main, article {
