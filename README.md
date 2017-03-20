@@ -11,7 +11,7 @@ Follow instructions: https://bower.io/#install-bower.
 
 3) Install dependences
 ``` html
-$ npm i &amp;&amp; bower i
+$ npm i && bower i
 ```
 
 
