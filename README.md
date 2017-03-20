@@ -3,11 +3,9 @@ Mercado Livre Frontend Test instructions.
 
 Install dependences
 ---------
-1) Install Node.js
-Follow instructions: https://nodejs.org/en/download/.
+1) Install Node.js - Follow instructions here: https://nodejs.org/en/download/.
 
-2) Install Bower
-Follow instructions: https://bower.io/#install-bower.
+2) Install Bower - Follow instructions here: https://bower.io/#install-bower.
 
 3) Install dependences
 ``` html
