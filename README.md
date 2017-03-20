@@ -1,6 +1,8 @@
 # Frontend Test - Mauricio Silva Teixeira de Nobrega
 Mercado Livre Frontend Test instructions.
 
+Demo: https://mauricionobrega.github.io/chico-product-page/
+
 Install dependences
 ---------
 1) Install Node.js - Follow instructions here: https://nodejs.org/en/download/.
